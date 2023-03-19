@@ -10,8 +10,8 @@ if( (day > 0 && day <= 31    )
 &&  year > 0                 ) {
         switch(month){
             case 2:{
-                if(day <= 29){
-                    if ( (Number(year) % 4 == 0 && Number(year) % 100 != 0)|| Number(year) % 400 == 0) {
+                if ( (Number(year) % 4 == 0 && Number(year) % 100 != 0)|| Number(year) % 400 == 0){
+                    if(day <= 29) {
                             console.log("Valid");
                             break;
                     }
@@ -19,9 +19,12 @@ if( (day > 0 && day <= 31    )
                         console.log("Unvalid");
                         break;   
                     }
-                else
+                else if (day <= 28){
+                    console.log("Valid");
+                    break;  }    
+                else{
                     console.log("Unvalid");
-                    break;   
+                    break;  }
                 }
             case 4:case 6:case 9:case 11:{
                 if(day > 0 && day <= 30){
